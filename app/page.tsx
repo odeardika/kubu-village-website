@@ -1,33 +1,27 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import logo from "@/public/logo.svg";
+import HamburgerButton from "@/components/Button/HamburgerButton";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen((prevState) => !prevState);
+  }
+
   return (
     <div className="">
-      <header>
+      <header className="flex justify-between items-center p-4">
         <div className="logo">
-
+          <Image src={logo} alt="logo" width={50} height={50} />
         </div>
-        <nav className="">
-          <ul className="flex justify-center">
-            <li className="mr-6">
-              <a href="#" className="text-blue-500 hover:text-blue-800">
-                Home
-              </a>
-            </li>
-            <li className="mr-6">
-              <a href="#" className="text-blue-500 hover:text-blue-800">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-blue-500 hover:text-blue-800">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="Contact Us">
-
+        <Navbar navClassname="hidden md:block"/>
+        
+        <div className="burger">
+          <HamburgerButton/>
         </div>
       </header>
     </div>
