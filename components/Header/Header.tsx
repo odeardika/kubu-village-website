@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import HamburgerButton from "@/components/Button/HamburgerButton";
 import SidebarMenu from "@/components/Menu/SidebarMenu";
@@ -15,14 +16,14 @@ function Header() {
         setIsSideBarOpen((prevState) => !prevState);
       }
       const menuList : menuData[] = [
-        {id : 1, name : "Home", url : "#", isSelected : false},
-        {id : 2, name : "Heritage", url : "#", isSelected : false},
-        {id : 3, name : "Destination", url : "#", isSelected : false},
-        {id : 4, name : "Product", url : "#", isSelected : false},
-        {id : 5, name : "Tour", url : "#", isSelected : false},
+        {id : 1, name : "Home", url : "/", isSelected : false},
+        {id : 2, name : "Heritage", url : "/heritage", isSelected : false},
+        {id : 3, name : "Destination", url : "/destination", isSelected : false},
+        {id : 4, name : "Product", url : "/product", isSelected : false},
+        {id : 5, name : "Tour", url : "/tour", isSelected : false},
       ];
   return (
-    <header className="flex justify-between items-center p-4">
+    <header className="flex justify-between items-center p-4 sticky top-0 bg-white z-50 shadow-md">
         <div className="logo">
           <Image src={logo} alt="logo" width={50} height={50} />
         </div>
