@@ -39,7 +39,7 @@ function Header() {
           {/* Menu Bar */}
           <SidebarMenu isOpen={isSideBarOpen} menuList={menuList}/>
           
-          <ContactUsButton href={"#"}/>
+          <ContactUsButton href={"https://wa.me/6281246899139?text=Halo%20saya%20ingin%20bertanya"}/>
           
         </div>
 
