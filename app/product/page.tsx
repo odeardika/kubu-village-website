@@ -11,7 +11,7 @@ async function ProductPage() {
 
         <div className='my-10 gap-4 flex flex-col justify-center items-center'>
           <h1 className='text-4xl font-bold'>Product</h1>
-          <h2 className='text-xl'>Crafted with Heart, Inspired by Kubu's Tradition!</h2>
+          <h2 className='text-xl'>Crafted with Heart, Inspired by Kubu&apos;s Tradition!</h2>
         </div>
 
         <div className='list-heritage grid grid-cols-3 gap-12 my-4'>
