@@ -1,7 +1,11 @@
-import React from 'react'
-import Card from '@/components/Card/Card'
+import React from 'react';
+import Card from '@/components/Card/Card';
+import { getProductFromServer } from '@/api/hygraph';
+import { Product } from '@/types/Hygraph';
 
-function ProductPage() {
+async function ProductPage() {
+  const products = await getProductFromServer();
+
   return (
     <main className='flex flex-col justify-center items-center'>
 
@@ -10,11 +14,15 @@ function ProductPage() {
           <h2 className='text-xl'>Crafted with Heart, Inspired by Kubu's Tradition!</h2>
         </div>
 
-        <div className='list-heritage grid grid-cols-3 gap-12'>
-          <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
-          <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
-          <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
-
+        <div className='list-heritage grid grid-cols-3 gap-12 my-4'>
+          {products.map((product : Product) => (
+            <Card
+              key={product.productName}
+              imageUrl={product.productImage.url}
+              title={product.productName}
+              description={product.productDescription}
+            />
+          ))}
         </div>
     </main>
   )

@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, description }) => {
       />
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <p className="text-gray-600 line-clamp-4">{description}</p>
       </div>
     </div>
   );
