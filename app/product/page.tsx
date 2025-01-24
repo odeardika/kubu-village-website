@@ -5,7 +5,11 @@ import { Product } from '@/types/Hygraph';
 
 async function ProductPage() {
   const products = await getProductFromServer();
-  
+  products.map((product : Product, index : number) => {
+    if (!index) {
+      console.error('Product ID is missing:', product);
+    }  
+  });
   return (
     <main className='flex flex-col justify-center items-center'>
 
