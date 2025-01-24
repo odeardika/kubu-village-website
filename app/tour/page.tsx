@@ -10,12 +10,12 @@ function TourPage() {
           <h2 className='text-xl'>Journey Through the Wonders of Kubu!</h2>
         </div>
 
-        <div className='list-heritage grid grid-cols-3 gap-12'>
+        {/* <div className='list-heritage grid grid-cols-3 gap-12'>
           <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
           <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
           <Card imageUrl="/image/description.png" title="Heritage" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptas."/>
 
-        </div>
+        </div> */}
     </main>
   )
 }
