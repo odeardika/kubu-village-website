@@ -2,14 +2,12 @@ import React from 'react';
 import Card from '@/components/Card/Card';
 import { getProductFromServer } from '@/api/hygraph';
 import { Product } from '@/types/Hygraph';
+import loadID from '@/module/loader/loader';
 
 async function ProductPage() {
   const products = await getProductFromServer();
-  products.map((product : Product, index : number) => {
-    if (!index) {
-      console.error('Product ID is missing:', product);
-    }  
-  });
+  const productsWithID : any = loadID({array: products});
+  
   return (
     <main className='flex flex-col justify-center items-center'>
 
@@ -19,10 +17,10 @@ async function ProductPage() {
         </div>
 
         <div className='list-heritage grid p-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12 my-4'>
-          {products.map((product : Product, index : number) => (
+          {productsWithID.map((product : any) => (
             <Card
               style='mb-4'
-              href={`/product/${index}`}
+              href={`/product/${product.id}`}
               key={product.productName}
               imageUrl={product.productImage.url}
               title={product.productName}
