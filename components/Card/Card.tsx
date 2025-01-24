@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { CardProps } from '@/types/Card';
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, description }) => {
+const Card: React.FC<CardProps> = ({ imageUrl, title, description, href, style = "" }) => {
   return (
-    <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <a href={href} className={`max-w-sm bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ${style}`}>
       <Image 
         src={imageUrl} 
         alt={title} 
@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, description }) => {
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600 line-clamp-4">{description}</p>
       </div>
-    </div>
+    </a>
   );
 };
 

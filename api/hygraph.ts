@@ -26,7 +26,8 @@ export async function getProductFromServer() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ 
-      query : query 
+      query : query,
+      cache : 'no-store'
     }),
   });
 
