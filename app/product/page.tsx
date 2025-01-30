@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '@/components/Card/Card';
-import { getProductFromServer } from '@/api/hygraph';
+import { getProductFromServer } from '@/api/hygraph/produks';
 import { Product } from '@/types/Hygraph';
 
 async function ProductPage() {
-  const products = await getProductFromServer();
+  const products : Product[] = await getProductFromServer();
   
   return (
     <main className='flex flex-col justify-center items-center'>
@@ -19,10 +19,10 @@ async function ProductPage() {
             <Card
               style='mb-4'
               href={`/product/${index}`}
-              key={product.productName}
-              imageUrl={product.productImage.url}
-              title={product.productName}
-              description={product.productDescription}
+              key={product.namaProduk}
+              imageUrl={product.fotoProduk[0].url}
+              title={product.namaProduk}
+              description={product.deskripsiProduk}
             />
           ))}
         </div>

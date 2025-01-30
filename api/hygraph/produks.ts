@@ -1,20 +1,18 @@
-
-
 const query = `
   {
-    products {
-      productName
-      productDescription
-      productImage {
+    produks {
+      namaProduk
+      fotoProduk {
         url
       }
-      productPrice
-      productLocation
-      productLocationUrl
+      deskripsiProduk
+      hargaProduk
+      satuanHargaProduk
+      lokasiProduk
+      urlLokasiProduk
     }
   }
 `;
-
 
 export async function getProductFromServer() {
   if (!process.env.NEXT_HYGRAPH_ENDPOINT) {
@@ -26,11 +24,11 @@ export async function getProductFromServer() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ 
-      query : query,
-      cache : 'no-store'
+      query: query,
+      cache: 'no-store'
     }),
   });
 
   const { data } = await response.json();
-  return data.products;
+  return data.produks;
 }

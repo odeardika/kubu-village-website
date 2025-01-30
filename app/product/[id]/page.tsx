@@ -1,5 +1,5 @@
 import React from "react";
-import { getProductFromServer } from "@/api/hygraph";
+import { getProductFromServer } from "@/api/hygraph/produks";
 import Image from "next/image";
 import { Product } from "@/types/Hygraph";
 
@@ -13,13 +13,13 @@ async function ProductPage({ params }: PageProps) {
   return (
     <main className="container lg:mx-auto lg:my-10 lg:px-10">
       <h1 className="text-3xl sm:text-4xl font-bold text-center my-10 ">
-        {currentProduct.productName}
+        {currentProduct.namaProduk}
       </h1>
       <div className="lg:flex lg:flex-row lg:gap-10">
         <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl lg:w-3/4">
           <Image
-            src={currentProduct.productImage.url}
-            alt={currentProduct.productName}
+            src={currentProduct.fotoProduk[0].url}
+            alt={currentProduct.namaProduk}
             width={400}
             height={250}
             className="w-full object-cover rounded-lg"
@@ -28,10 +28,10 @@ async function ProductPage({ params }: PageProps) {
         <div className="flex justify-center flex-col">
           <div className="flex flex-col my-5 mx-4 p-4 rounded-lg shadow-lg relative">
             <h3 className="text-xl font-semibold mb-2">
-              {currentProduct.productName}
+              {currentProduct.namaProduk}
             </h3>
             <a
-              href={currentProduct.productLocationUrl}
+              href={currentProduct.urlLokasiProduk}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2"
@@ -43,7 +43,7 @@ async function ProductPage({ params }: PageProps) {
                 height={20}
               />
               <h4 className="text-sm font-light">
-                {currentProduct.productLocation}
+                {currentProduct.lokasiProduk}
               </h4>
             </a>
 
@@ -56,9 +56,9 @@ async function ProductPage({ params }: PageProps) {
               <p className="">
                 Rp{" "}
                 <span className="font-semibold">
-                  {currentProduct.productPrice}.000
+                  {currentProduct.hargaProduk}.000
                 </span>
-                / Kg
+                / {currentProduct.satuanHargaProduk}
               </p>
             </div>
             <a
@@ -72,7 +72,7 @@ async function ProductPage({ params }: PageProps) {
 
       </div>
         <div className="description mx-4 p-4 rounded-lg shadow-lg lg:mt-5">
-          <p>{currentProduct.productDescription}</p>
+          <p>{currentProduct.deskripsiProduk}</p>
         </div>
     </main>
   );
