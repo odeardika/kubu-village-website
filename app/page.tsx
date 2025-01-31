@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero/Hero";
 import Image from "next/image";
 
-export default function Home() {
+export default function Beranda() {
   return (
     <div className="">
 

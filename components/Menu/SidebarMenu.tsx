@@ -13,7 +13,7 @@ function SidebarMenu({isOpen, menuList} : SidebarMenuProps) {
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           >
-            <div className="text-white p-4 pt-12">
+            <div className="text-white p-4 pt-12 flex flex-col justify-between h-full">
                 <ul className="space-y-2">
                     {menuList.map((menu) => (
                         <li key={menu.id} className="py-2 border-b border-gray-300">
@@ -23,6 +23,13 @@ function SidebarMenu({isOpen, menuList} : SidebarMenuProps) {
                         </li>
                     ))}
                 </ul>
+                <button className="border-2 px-4 py-2 border-primary-800 text-primary-800 rounded-md font-semibold bottom-0">
+                <a 
+                href={"https://wa.me/6281246899139?text=Halo%20saya%20ingin%20bertanya"} 
+                target="_blank"
+                rel="noopener noreferrer"
+                >Hubungi Kami</a>
+                </button>
             </div>
     </div>
   )

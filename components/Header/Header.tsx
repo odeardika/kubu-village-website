@@ -16,11 +16,10 @@ function Header() {
         setIsSideBarOpen((prevState) => !prevState);
       }
       const menuList : menuData[] = [
-        {id : 1, name : "Home", url : "/", isSelected : false},
-        {id : 2, name : "Heritage", url : "/heritage", isSelected : false},
-        {id : 3, name : "Destination", url : "/destination", isSelected : false},
-        {id : 4, name : "Product", url : "/product", isSelected : false},
-        {id : 5, name : "Tour", url : "/tour", isSelected : false},
+        {id : 1, name : "Beranda", url : "/", isSelected : false},
+        {id : 2, name : "Kebudayaan", url : "/kebudayaan", isSelected : false},
+        {id : 3, name : "Wisata", url : "/wisata", isSelected : false},
+        {id : 4, name : "Produk", url : "/produk", isSelected : false},
       ];
   return (
     <header className="flex justify-between items-center p-4 sticky top-0 bg-white z-50 shadow-md">

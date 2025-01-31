@@ -11,21 +11,21 @@ async function ProductPage({ params }: PageProps) {
   const products: Product[] = await getProductFromServer();
   const currentProduct = products[parseInt((await params).id)];
   return (
-    <main className="container lg:mx-auto lg:my-10 lg:px-10">
+    <main className=" lg:mx-auto lg:my-10 lg:px-10">
       <h1 className="text-3xl sm:text-4xl font-bold text-center my-10 ">
         {currentProduct.namaProduk}
       </h1>
       <div className="lg:flex lg:flex-row lg:gap-10">
-        <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl lg:w-3/4">
+        <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl lg:w-3/4 aspect-[3/2] overflow-hidden">
           <Image
-            src={currentProduct.fotoProduk[0].url}
+            src={currentProduct.fotoProduk[2].url}
             alt={currentProduct.namaProduk}
             width={400}
-            height={250}
+            height={300}
             className="w-full object-cover rounded-lg"
           />
         </div>
-        <div className="flex justify-center flex-col">
+        <div className="flex justify-center flex-col lg:w-1/3">
           <div className="flex flex-col my-5 mx-4 p-4 rounded-lg shadow-lg relative">
             <h3 className="text-xl font-semibold mb-2">
               {currentProduct.namaProduk}
@@ -47,7 +47,7 @@ async function ProductPage({ params }: PageProps) {
               </h4>
             </a>
 
-            <div className=" absolute top-0 right-0 z-50 p-1 text-white bg-slate-800 rounded-bl-lg rounded-tr-lg">
+            <div className=" absolute top-0 right-0 z-30 p-1 text-white bg-slate-800 rounded-bl-lg rounded-tr-lg">
               <h3>On Sale</h3>
             </div>
 

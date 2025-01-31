@@ -8,7 +8,7 @@ function ContactUsButton({ href }: { href: string }) {
       href={href} 
       target="_blank"
       rel="noopener noreferrer"
-      >Contact Us</a>
+      >Hubungi Kami</a>
     </button>
   );
 }
