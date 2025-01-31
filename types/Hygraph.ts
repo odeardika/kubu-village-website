@@ -11,3 +11,9 @@ export interface Product {
   lokasiProduk: string; // Lokasi produk (string)
   urlLokasiProduk: string; // URL lokasi produk (string)
 }
+
+export interface Heritage {
+  namaBudaya: string;
+  fotoKebudayaan: Asset[];
+  deskripsiKebudayaan: string;
+}
