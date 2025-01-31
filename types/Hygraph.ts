@@ -17,3 +17,13 @@ export interface Heritage {
   fotoKebudayaan: Asset[];
   deskripsiKebudayaan: string;
 }
+
+export interface Destination {
+  namaTempatWisata: string;
+  fotoTempatWisata: Asset[];
+  deskripsiTempatWisata: string;
+  hargaTiketWisata: number;
+  satuanHargaTiket: string;
+  lokasiWisata: string;
+  urlLokasiWisata: string;
+}

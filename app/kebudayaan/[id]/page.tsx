@@ -16,7 +16,7 @@ async function ProductPage({ params }: PageProps) {
         {currentHeritag.namaBudaya}
       </h1>
       <div className="lg:flex lg:flex-row lg:gap-10">
-        <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl w-full overflow-hidden">
+        <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl max-w-full lg:w-full overflow-hidden">
           <Image
             src={currentHeritag.fotoKebudayaan[0].url}
             alt={currentHeritag.namaBudaya}
