@@ -18,3 +18,32 @@
     @apply -rotate-45;
 }
 
+/* Custom pagination */
+.swiper-pagination-bullet {
+    background: #cbd5e0;
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #4a5568;
+  }
+  
+  /* Custom navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    display: none;
+    
+  }
+  
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #2d3748;
+  }
+  
+  /* Custom pagination position */
+  .swiper-pagination {
+    bottom: 20px !important;
+  }

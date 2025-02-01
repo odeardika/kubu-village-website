@@ -2,6 +2,7 @@ import React from "react";
 import { getProductFromServer } from "@/api/hygraph/produks";
 import Image from "next/image";
 import { Product } from "@/types/Hygraph";
+import SwiperClient from "@/components/Swiper/SwiperProduct";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -17,13 +18,7 @@ async function ProductPage({ params }: PageProps) {
       </h1>
       <div className="lg:flex lg:flex-row lg:gap-10">
         <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl lg:w-3/4 aspect-[3/2] overflow-hidden">
-          <Image
-            src={currentProduct.fotoProduk[2].url}
-            alt={currentProduct.namaProduk}
-            width={400}
-            height={300}
-            className="w-full object-cover rounded-lg"
-          />
+          <SwiperClient product={currentProduct} />
         </div>
         <div className="flex justify-center flex-col lg:w-1/3">
           <div className="flex flex-col my-5 mx-4 p-4 rounded-lg shadow-lg relative">
