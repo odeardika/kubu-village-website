@@ -1,7 +1,7 @@
 import React from "react";
 import { getKebudayaanFromServer } from "@/api/hygraph/kebudayaan";
-import Image from "next/image";
 import { Heritage } from "@/types/Hygraph";
+import SwiperClient from "@/components/Swiper/SwiperHeritage";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -17,13 +17,7 @@ async function ProductPage({ params }: PageProps) {
       </h1>
       <div className="lg:flex lg:flex-row lg:gap-10">
         <div className="flex justify-center items-center mx-4 rounded-lg drop-shadow-2xl max-w-full lg:w-full overflow-hidden">
-          <Image
-            src={currentHeritag.fotoKebudayaan[0].url}
-            alt={currentHeritag.namaBudaya}
-            width={400}
-            height={300}
-            className="w-full object-cover rounded-lg"
-          />
+          <SwiperClient heritage={currentHeritag} />
         </div>
       </div>
         <div className="description mx-4 p-4 rounded-lg shadow-lg lg:mt-5">

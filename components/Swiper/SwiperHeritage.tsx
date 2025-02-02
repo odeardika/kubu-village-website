@@ -26,7 +26,7 @@ export default function SwiperClient({ heritage }: SwiperClientProps) {
             alt={heritage.namaBudaya}
             width={400}
             height={300}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full object-cover rounded-lg"
           />
         </SwiperSlide>
       ))}
