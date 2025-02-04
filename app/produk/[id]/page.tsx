@@ -47,7 +47,7 @@ async function ProductPage({ params }: PageProps) {
             </div>
 
             <div className="price mt-2">
-              <h3 className="text-lg font-bold">Price :</h3>
+              <h3 className="text-lg font-bold">Harga :</h3>
               <p className="">
                 Rp{" "}
                 <span className="font-semibold">

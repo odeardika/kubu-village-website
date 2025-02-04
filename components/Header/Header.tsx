@@ -11,6 +11,10 @@ import { useState } from "react";
 
 function Header() {
     const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+    // if(process.env.PHONE_NUMBER){
+    //   throw new Error('PHONE NUMBER is not defined');
+    // }
+    const phoneNumber = `${process.env.PHONE_NUMBER}`  || "No phone available";
 
     const handleHamburgerButtonClick = () => {
         setIsSideBarOpen((prevState) => !prevState);
@@ -37,8 +41,8 @@ function Header() {
           
           {/* Menu Bar */}
           <SidebarMenu isOpen={isSideBarOpen} menuList={menuList}/>
-          
-          <ContactUsButton href={"https://wa.me/6281246899139?text=Halo%20saya%20ingin%20bertanya"}/>
+
+          <ContactUsButton href={`https://wa.me/${phoneNumber}?text=Halo%20saya%20ingin%20bertanya`}/>
           
         </div>
 
