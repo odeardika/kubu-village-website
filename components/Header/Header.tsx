@@ -11,10 +11,10 @@ import { useState } from "react";
 
 function Header() {
     const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-    // if(process.env.PHONE_NUMBER){
-    //   throw new Error('PHONE NUMBER is not defined');
-    // }
-    const phoneNumber = `${process.env.PHONE_NUMBER}`  || "No phone available";
+    if (!process.env.NEXT_PUBLIC_PHONE_NUMBER ) {
+      throw new Error('NEXT_PUBLIC_PHONE_NUMBER  is not defined');
+    }
+    const phoneNumber = `${process.env.NEXT_PUBLIC_PHONE_NUMBER }`  || "No phone available";
 
     const handleHamburgerButtonClick = () => {
         setIsSideBarOpen((prevState) => !prevState);

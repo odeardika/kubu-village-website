@@ -3,6 +3,7 @@ import { getProductFromServer } from "@/api/hygraph/produks";
 import Image from "next/image";
 import { Product } from "@/types/Hygraph";
 import SwiperClient from "@/components/Swiper/SwiperProduct";
+import DynamicDescription from "@/components/Description/DynamicDescription";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -67,7 +68,7 @@ async function ProductPage({ params }: PageProps) {
 
       </div>
         <div className="description mx-4 p-4 rounded-lg shadow-lg lg:mt-5">
-          <p>{currentProduct.deskripsiProduk}</p>
+          <DynamicDescription text={currentProduct.deskripsiProduk} />
         </div>
     </main>
   );

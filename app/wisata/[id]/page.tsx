@@ -3,6 +3,7 @@ import { getDestinationFromServer } from "@/api/hygraph/wisata";
 import Image from "next/image";
 import { Destination } from "@/types/Hygraph";
 import SwiperClient from "@/components/Swiper/SwiperDestination";
+import DynamicDescription from "@/components/Description/DynamicDescription";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -11,7 +12,6 @@ interface PageProps {
 async function HeritagePage({ params }: PageProps) {
   const destination: Destination[] = await getDestinationFromServer();
   const currentDestination = destination[parseInt((await params).id)];
-  const description = currentDestination.deskripsiTempatWisata.split("\n");
 
   return (
     <main className="lg:mx-auto lg:my-10 lg:px-10">
@@ -69,11 +69,7 @@ async function HeritagePage({ params }: PageProps) {
         </div>
       </div>
       <div className="description mx-4 p-4 rounded-lg shadow-lg lg:mt-5">
-        {description.map((desc, index) => (
-          <p key={index} className="mb-5">
-            {desc}
-          </p>
-        ))}
+        <DynamicDescription text={currentDestination.deskripsiTempatWisata} />
       </div>
     </main>
   );

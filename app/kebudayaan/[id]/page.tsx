@@ -2,6 +2,7 @@ import React from "react";
 import { getKebudayaanFromServer } from "@/api/hygraph/kebudayaan";
 import { Heritage } from "@/types/Hygraph";
 import SwiperClient from "@/components/Swiper/SwiperHeritage";
+import DynamicDescription from "@/components/Description/DynamicDescription";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -21,7 +22,7 @@ async function ProductPage({ params }: PageProps) {
         </div>
       </div>
         <div className="description mx-4 p-4 rounded-lg shadow-lg lg:mt-5">
-          <p>{currentHeritag.deskripsiKebudayaan}</p>
+          <DynamicDescription text={currentHeritag.deskripsiKebudayaan} />
         </div>
     </main>
   );
