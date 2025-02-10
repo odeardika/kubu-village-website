@@ -12,6 +12,7 @@ interface PageProps {
 async function HeritagePage({ params }: PageProps) {
   const destination: Destination[] = await getDestinationFromServer();
   const currentDestination = destination[parseInt((await params).id)];
+  console.log();
 
   return (
     <main className="lg:mx-auto lg:my-10 lg:px-10">
@@ -59,12 +60,14 @@ async function HeritagePage({ params }: PageProps) {
                 / {currentDestination.satuanHargaTiket}
               </p>
             </div>
-            <a
-              href=""
-              className="bg-slate-800 text-white w-min text-nowrap p-2 rounded-md my-2"
-            >
-              Book Now
-            </a>
+            {currentDestination.noTelpon && (
+              <a
+                href={`https://wa.me/${currentDestination.noTelpon}?text=Halo%20saya%20ingin%20bertanya`}
+                className="bg-slate-800 text-white w-min text-nowrap p-2 rounded-md my-2"
+              >
+                Book Now
+              </a>
+            )}
           </div>
         </div>
       </div>

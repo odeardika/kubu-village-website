@@ -6,6 +6,7 @@ const query = `
         url
       }
       deskripsiTempatWisata
+      noTelpon
       hargaTiketWisata
       satuanHargaTiket
       lokasiWisata

@@ -6,6 +6,7 @@ const query = `
         url
       }
       deskripsiProduk
+      noTelponPenjual
       hargaProduk
       satuanHargaProduk
       lokasiProduk

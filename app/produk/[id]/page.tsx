@@ -58,10 +58,10 @@ async function ProductPage({ params }: PageProps) {
               </p>
             </div>
             <a
-              href=""
+              href={`https://wa.me/${currentProduct.noTelponPenjual}?text=Halo%20saya%20ingin%20bertanya`}
               className="bg-slate-800 text-white w-min text-nowrap p-2 rounded-md my-2"
             >
-              Buy Now
+              Beli Sekarang
             </a>
           </div>
         </div>
