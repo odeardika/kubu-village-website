@@ -12,7 +12,6 @@ interface PageProps {
 async function HeritagePage({ params }: PageProps) {
   const destination: Destination[] = await getDestinationFromServer();
   const currentDestination = destination[parseInt((await params).id)];
-  console.log();
 
   return (
     <main className="lg:mx-auto lg:my-10 lg:px-10">

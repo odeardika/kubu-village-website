@@ -20,7 +20,7 @@ async function ProductPage() {
               style='mb-4'
               href={`/produk/${index}`}
               key={product.namaProduk}
-              imageUrl={product.fotoProduk[0].url}
+              imageUrl={product.fotoProduk?.[0]?.url || 'https://placehold.co/600x400'}
               title={product.namaProduk}
               description={product.deskripsiProduk}
             />

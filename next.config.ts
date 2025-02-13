@@ -2,7 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['ap-south-1.graphassets.com'], // Tambahkan domain di sini
+    domains: [
+      'ap-south-1.graphassets.com',
+      'placehold.co'
+    ], // Tambahkan domain di sini
   },
 };
 

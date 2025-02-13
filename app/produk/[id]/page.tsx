@@ -12,6 +12,7 @@ interface PageProps {
 async function ProductPage({ params }: PageProps) {
   const products: Product[] = await getProductFromServer();
   const currentProduct = products[parseInt((await params).id)];
+  
   return (
     <main className=" lg:mx-auto lg:my-10 lg:px-10">
       <h1 className="text-3xl sm:text-4xl font-bold text-center my-10 ">
@@ -57,12 +58,14 @@ async function ProductPage({ params }: PageProps) {
                 / {currentProduct.satuanHargaProduk}
               </p>
             </div>
-            <a
-              href={`https://wa.me/${currentProduct.noTelponPenjual}?text=Halo%20saya%20ingin%20bertanya`}
-              className="bg-slate-800 text-white w-min text-nowrap p-2 rounded-md my-2"
-            >
-              Beli Sekarang
-            </a>
+            {currentProduct.noTelponPenjual && (
+              <a
+                href={`https://wa.me/${currentProduct.noTelponPenjual}?text=Halo%20saya%20ingin%20bertanya`}
+                className="bg-slate-800 text-white w-min text-nowrap p-2 rounded-md my-2"
+              >
+                Beli Sekarang
+              </a>
+            )}
           </div>
         </div>
 
