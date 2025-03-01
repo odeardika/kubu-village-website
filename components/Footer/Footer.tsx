@@ -52,7 +52,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-500 my-6"></div>
-      <p>&copy; KKN Kelurahan Kubu 2025. All rights reserved.</p>
+      <p>&copy; KKN PPM XXX Universitas Udayana Kelurahan Kubu. All rights reserved.</p>
     </footer>
   )
 }

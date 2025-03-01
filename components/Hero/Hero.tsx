@@ -21,7 +21,7 @@ function Hero() {
           Pesona Kubu
         </h1>
         <h2 className="text-white text-base sm:text-2xl md:text-3xl">
-        Temukan Keajaiban Tersembunyi Desa Kubu!
+        Temukan Keajaiban Tersembunyi Kelurahan Kubu!
         </h2>
       </div>
     </div>
